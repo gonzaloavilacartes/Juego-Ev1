@@ -1,4 +1,3 @@
-# Juego-Ev1
 # Juego de Combate: Bárbaro, Sacerdote y EnderDragon
 
 Este proyecto es un juego de combate por turnos desarrollado en C#. Los jugadores controlan personajes con habilidades únicas y pueden enfrentarse en duelos épicos, incluyendo un enfrentamiento final contra el jefe **EnderDragon**.
