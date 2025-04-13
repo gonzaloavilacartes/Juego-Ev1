@@ -21,7 +21,7 @@ class Juego
             ganador.SetVida(100); // Vida completa 
             Console.WriteLine($"{ganador.GetNombre()} se ha curado completamente para el duelo final.\n");
 
-            // 👤 PEDIR DATOS PARA EL JEFE FINAL
+            // pedir datos jefe final
             Console.WriteLine("--- CREACIÓN DEL JEFE FINAL: EnderDragon Personalizado ---");
 
             Console.Write("Ingrese el nombre del jefe final: ");
@@ -33,12 +33,12 @@ class Juego
             Console.Write("Ingrese el ataque del jefe: ");
             int ataqueJefe = int.Parse(Console.ReadLine() ?? "20");
 
-            // 🐉 Crear EnderDragon con habilidades especiales
+            // crear ender dragon
             EnderDragon jefe = new EnderDragon(nombreJefe, vidaJefe, ataqueJefe);
             Equipo equipoJefe = new Equipo(5, 3);
             jefe.Equipar(equipoJefe);
 
-            // Duelo final
+            // duelo final
             Console.WriteLine("\n--- DUELO FINAL: Ganador vs EnderDragon ---");
             Personaje? campeon = Batalla(ganador, jefe);
             ganador.SetVida(100); // full de vida / fuerzo que se haga el duelo final
