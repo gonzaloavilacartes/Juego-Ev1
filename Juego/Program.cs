@@ -8,8 +8,8 @@ class Juego
     public static void Main()
     {
         // Crear personajes iniciales
-        Barbaro barbaro = new Barbaro("Barbaro", 100, 15, 9);
-        Sacerdote sacerdote = new Sacerdote("Sacerdote", 100, 10);
+        Barbaro barbaro = new Barbaro("Barbaro", 30, 5);
+        Sacerdote sacerdote = new Sacerdote("Sacerdote", 30, 7, 10);
 
         // Primer duelo
         Console.WriteLine("\n--- DUELO 1: Bárbaro vs Sacerdote ---");
