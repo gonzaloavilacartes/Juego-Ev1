@@ -1,7 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 // Console.WriteLine("Hello, World!");
 
-
 using System;
 
 class Juego
@@ -19,21 +18,30 @@ class Juego
         if (ganador != null)
         {
             Console.WriteLine($"\n¡{ganador.GetNombre()} ganó el primer duelo!");
-            ganador.SetVida(100); // Vida completa
+            ganador.SetVida(100); // Vida completa 
             Console.WriteLine($"{ganador.GetNombre()} se ha curado completamente para el duelo final.\n");
 
-            // Crear EnderDragon
-            Console.WriteLine("Creando al jefe final: EnderDragon...");
-            EnderDragon jefe = new EnderDragon("EnderDragon", 120, 20);
+            // 👤 PEDIR DATOS PARA EL JEFE FINAL
+            Console.WriteLine("--- CREACIÓN DEL JEFE FINAL: EnderDragon Personalizado ---");
 
-            // Crear equipo para jefe
+            Console.Write("Ingrese el nombre del jefe final: ");
+            string nombreJefe = Console.ReadLine() ?? "EnderDragon";
+
+            Console.Write("Ingrese la vida del jefe: ");
+            int vidaJefe = int.Parse(Console.ReadLine() ?? "120");
+
+            Console.Write("Ingrese el ataque del jefe: ");
+            int ataqueJefe = int.Parse(Console.ReadLine() ?? "20");
+
+            // 🐉 Crear EnderDragon con habilidades especiales
+            EnderDragon jefe = new EnderDragon(nombreJefe, vidaJefe, ataqueJefe);
             Equipo equipoJefe = new Equipo(5, 3);
             jefe.Equipar(equipoJefe);
 
             // Duelo final
             Console.WriteLine("\n--- DUELO FINAL: Ganador vs EnderDragon ---");
             Personaje? campeon = Batalla(ganador, jefe);
-            ganador.SetVida(100); // full de vida
+            ganador.SetVida(100); // full de vida / fuerzo que se haga el duelo final
 
             if (campeon != null)
                 Console.WriteLine($"\n{campeon.GetNombre()} es el campeón definitivo!");
